@@ -1,0 +1,20 @@
+{
+  "name": "Proyecto Final 1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "type": "module",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "moment": "^2.29.4",
+    "multer": "^1.4.5-lts.1"
+  }
+}
