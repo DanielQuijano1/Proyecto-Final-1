@@ -1,9 +1,9 @@
 import { promises as fs } from 'fs'
 
-class ProductManager {
+export class ProductManager {
 
-    constructor() {
-        this.path = "../products/productos.json";
+    constructor(path) {
+        this.path = path;
         this.products = [];
     }
 

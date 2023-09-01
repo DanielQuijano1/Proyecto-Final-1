@@ -2,7 +2,7 @@ import { promises as fs } from "fs";
 
 import { ProductManager } from "./ProductManager.js";
 
-const productManager = new ProductManager("../products/productos.json");
+const productManager = new ProductManager("./products/productos.json");
 
 export class Carts {
 
@@ -17,7 +17,7 @@ export class Carts {
             return listCarts[listCarts.length - 1].id + 1;
         } catch (error) {
             console.log(
-                "🚀 ~ file: Carts.js:18 ~ Carts ~ generateIndex ~ error:",
+                "Carts ~ generateIndex ~ error:",
                 error
             );
         }
@@ -38,7 +38,7 @@ export class Carts {
             return { message: "Carrito Creado con éxito" };
         } catch (error) {
             console.log(
-                "🚀 ~ file: Carts.js:33 ~ Carts ~ createCart ~ error:",
+                "Carts ~ createCart ~ error:",
                 error
             );
         }
@@ -61,7 +61,7 @@ export class Carts {
                 return { message: "Not found" }
             }
         } catch (error) {
-            console.log(" file: Carts.js:59 ~ Carts ~ getCatrById ~ error:", error)
+            console.log("Carts ~ getCatrById ~ error:", error)
 
         }
 
@@ -72,13 +72,13 @@ export class Carts {
         try {
             let listCarts = JSON.parse(await fs.readFile(this.path, "utf-8"));
 
-            console.log(" file: Carts.js:67 ~ Carts ~ addProductInCartById ~ listCarts:", listCarts)
+            console.log("Carts ~ addProductInCartById ~ listCarts:", listCarts)
 
             let cartToUpdate = listCarts.find((e) => {
                 return e.id === id;
             });
 
-            console.log(" file: Carts.js:71 ~ Carts ~ cartToUpdate ~ cartToUpdate:", cartToUpdate)
+            console.log("Carts ~ cartToUpdate ~ cartToUpdate:", cartToUpdate)
 
             let prod = cartToUpdate.products.find((e) => {
                 return e.product === product;
