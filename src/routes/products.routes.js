@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { ProductManager } from "../ProductManager.js";
 
-const productManager = new ProductManager("../products/productos.json")
+const productManager = new ProductManager("./products/productos.json")
 const productRouter = Router();
 
 
@@ -17,7 +17,7 @@ productRouter.get('/', async (req, res) => {
 })
 
 
-productRouter.get('/:id', async (req, res) => {
+productRouter.get('/:pid', async (req, res) => {
     const { id } = req.params
 
     const prod = await productManager.getProductsByID(parseInt(id))
@@ -49,7 +49,7 @@ productRouter.post('/', async (req, res) => {
 })
 
 
-productRouter.put('/:id', async (req, res) => {
+productRouter.put('/:pid', async (req, res) => {
     const { id } = req.params
 
     const confirmacion = await productManager.getProductsByID(parseInt(id))
@@ -63,7 +63,7 @@ productRouter.put('/:id', async (req, res) => {
 })
 
 
-productRouter.delete('/:id', async (req, res) => {
+productRouter.delete('/:pid', async (req, res) => {
     const { id } = req.params
 
     const confirmacion = await productManager.getProductsByID(parseInt(id))

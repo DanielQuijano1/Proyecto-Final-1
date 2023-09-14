@@ -3,7 +3,7 @@ import { promises as fs } from 'fs'
 export class ProductManager {
 
     constructor(path) {
-        this.path = path;
+        this.path = "../products/productos.json";;
         this.products = [];
     }
 
