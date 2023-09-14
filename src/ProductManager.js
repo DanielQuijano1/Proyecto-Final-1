@@ -25,8 +25,8 @@ export class ProductManager {
 
 
     async getProducts() {
-            const products = JSON.parse(await fs.readFile(this.path, "utf-8"))
-            console.log(products)
+        const products = JSON.parse(await fs.readFile(this.path, "utf-8"))
+        console.log(products)
     }
 
     getProductsByID = async (id) => {
@@ -105,7 +105,8 @@ const producto2 = new Product('FF002', "Funda mototola g8 power", 250, [], 500, 
 const producto3 = new Product('FF003', "Funda mototola g8 plus", 250, [], 500, "fundas", "funda para motorola g8 plus")
 */
 // se crea la instancia Product Manager
-const adminProduct = new ProductManager("../products/productos.json");
+
+//const adminProduct = new ProductManager("../products/productos.json");
 
 /*
 //se llama a getProducts la cual debe devolver un arreglo vacio
@@ -144,7 +145,7 @@ adminProduct.updateProduct(2, productoActualizado )
 // adminProduct.deleteProduct(2)
 
 //se evalua update del producto 2 con getProductsByID
-console.log(adminProduct.getProducts());
+//console.log(adminProduct.getProducts());
 // console.log(adminProduct.getProductsByID(2));
 
 
